@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Görev Yöneticisi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TaskFlow ⚡</h1>
+            <p>Vanilla JavaScript ile Görev Yönetimi</p>
+        </header>
+
+        <section class="card">
+            <form id="task-form">
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Yeni bir görev ekleyin..." required autocomplete="off">
+                    <select id="priority-select">
+                        <option value="low">Düşük</option>
+                        <option value="medium" selected>Orta</option>
+                        <option value="high">Yüksek</option>
+                    </select>
+                    <button type="submit" id="add-btn">Ekle</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="controls-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tümü (<span id="count-all">0</span>)</button>
+                <button class="filter-btn" data-filter="pending">Bekleyen (<span id="count-pending">0</span>)</button>
+                <button class="filter-btn" data-filter="completed">Tamamlanan (<span id="count-completed">0</span>)</button>
+            </div>
+            <button id="clear-completed-btn" class="danger-btn">Temizle</button>
+        </section>
+
+        <ul id="task-list" class="task-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
